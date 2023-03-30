@@ -1,11 +1,11 @@
 import "./App.css";
-import Body from "./components/Home/Body";
-import TopBar from "./components/Home/TopBar";
+import Body from "./components/home/Body";
+import TopBar from "./components/home/TopBar";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 const theme = createTheme({
   typography: {
-    fontFamily: "fantasy", // set your desired font family
+    fontFamily: "cursive", // set your desired font family
   },
 });
 

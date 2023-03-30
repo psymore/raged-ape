@@ -1,15 +1,20 @@
 import * as React from "react";
 import { AppBar, Grid, Toolbar, Button, Menu, MenuItem } from "@mui/material";
+import Person4Icon from "@mui/icons-material/Person4";
+import TopNavigation from "./TopNavigations";
 
 export default function TopBar() {
   const [anchorEl, setAnchorEl] = React.useState(null);
+  const open = Boolean(anchorEl);
 
   const handleMenuOpen = (event) => {
     setAnchorEl(event.currentTarget);
+    console.log("Menu opened");
   };
 
   const handleMenuClose = () => {
     setAnchorEl(null);
+    console.log("Menu closed");
   };
 
   const handleSignUpClick = () => {
@@ -36,19 +41,17 @@ export default function TopBar() {
               Raged Ape
             </Grid>
             <Grid item>
+              <TopNavigation />
+            </Grid>
+            <Grid item>
               <Button
-                color="inherit"
+                color="primary"
                 variant="outlined"
-                onMouseOver={handleMenuOpen}
-                // onMouseLeave={handleMenuClose}
+                onClick={handleMenuOpen}
               >
-                Login
+                <Person4Icon />
               </Button>
-              <Menu
-                anchorEl={anchorEl}
-                open={Boolean(anchorEl)}
-                onClose={handleMenuClose}
-              >
+              <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
                 <MenuItem onClick={handleSignUpClick}>Sign up</MenuItem>
                 <MenuItem onClick={handleDeleteAccountClick}>
                   Delete account
