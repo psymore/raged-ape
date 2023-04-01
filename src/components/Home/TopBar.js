@@ -1,5 +1,13 @@
 import * as React from "react";
-import { AppBar, Grid, Toolbar, Button, Menu, MenuItem } from "@mui/material";
+import {
+  AppBar,
+  Grid,
+  Toolbar,
+  Button,
+  Menu,
+  MenuItem,
+  Typography,
+} from "@mui/material";
 import Person4Icon from "@mui/icons-material/Person4";
 import TopNavigation from "./TopNavigations";
 
@@ -38,7 +46,7 @@ export default function TopBar() {
         >
           <Grid container justifyContent="space-between" alignItems="center">
             <Grid item sx={{ cursor: "pointer" }}>
-              Raged Ape
+              <Typography>RAGED APE</Typography>
             </Grid>
             <Grid item>
               <TopNavigation />

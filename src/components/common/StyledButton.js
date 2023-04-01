@@ -1,35 +1,20 @@
-import * as React from "react";
-import PropTypes from "prop-types";
-import { Link as RouterLink, MemoryRouter } from "react-router-dom";
-import { StaticRouter } from "Router";
-import Button from "@mui/material/Button";
+import { grey, red } from "@mui/material/colors";
+import { styled } from "@mui/material/styles";
+import { Button, Grid } from "@mui/material";
 
-const LinkBehavior = React.forwardRef((props, ref) => (
-  <RouterLink ref={ref} to="/" {...props} role={undefined} />
-));
-
-function Router(props) {
-  const { children } = props;
-  if (typeof window === "undefined") {
-    return <StaticRouter location="/">{children}</StaticRouter>;
-  }
-
-  return <MemoryRouter>{children}</MemoryRouter>;
-}
-
-Router.propTypes = {
-  children: PropTypes.node,
-};
-export default function StyledButton() {
+export default function StyledButton({ children }) {
+  const ColorButton = styled(Button)(({ theme }) => ({
+    color: theme.palette.getContrastText(red[200]),
+    width: "10rem",
+    backgroundColor: grey[50],
+    "&:hover": {
+      backgroundColor: grey[400],
+    },
+    fontWeight: "bold",
+  }));
   return (
-    <div>
-      <Router>
-        <Button component={RouterLink} to="/">
-          With prop forwarding
-        </Button>
-        <br />
-        <Button component={LinkBehavior}>With inlining</Button>
-      </Router>
-    </div>
+    <Grid sx={{ border: "1px solid red" }}>
+      <ColorButton>{children}</ColorButton>
+    </Grid>
   );
 }
