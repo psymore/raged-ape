@@ -4,16 +4,19 @@ import { Button, Grid } from "@mui/material";
 
 export default function StyledButton({ children }) {
   const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(red[200]),
+    color: "white",
     width: "10rem",
-    backgroundColor: grey[50],
+    fontWeight: "inherit",
+    // backgroundColor: theme.palette.secondary.main,
     "&:hover": {
-      backgroundColor: grey[400],
+      backgroundColor: grey[50],
+      color: theme.palette.primary.main,
+      fontWeight: "bolder",
     },
-    fontWeight: "bold",
+    fontSize: "1rem",
   }));
   return (
-    <Grid sx={{ border: "1px solid red" }}>
+    <Grid>
       <ColorButton>{children}</ColorButton>
     </Grid>
   );
