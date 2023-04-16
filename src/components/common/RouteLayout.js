@@ -21,7 +21,13 @@ export default function RouteLayout({ header, children, headerComp }) {
           </Typography>
         )}
 
-        <div style={{ marginRight: "4vw" }}>{children}</div>
+        <Grid
+          sx={{
+            mr: { xs: "0.5vw", sm: "1vw", md: "2vw", lg: "3vw", xl: "4vw" },
+          }}
+        >
+          {children}
+        </Grid>
       </Grid>
     </Grid>
   );

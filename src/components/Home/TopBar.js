@@ -51,7 +51,7 @@ export default function TopBar() {
             sx={{ marginInline: "6rem" }}
           >
             <Grid item sx={{ cursor: "pointer" }}>
-              <Typography>RAGED APE</Typography>
+              <Typography sx={{ color: "red" }}>RAGED APE</Typography>
             </Grid>
             <Grid item>
               <TopNavigation />

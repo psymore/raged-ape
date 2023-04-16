@@ -14,7 +14,13 @@ export default function TopNavigation() {
   };
 
   return (
-    <Grid2 container spacing={10} sx={{ mr: 2 }}>
+    <Grid2
+      container
+      spacing={{ xs: 0, sm: 0.1, md: 1, lg: 5, xl: 10 }}
+      sx={{
+        mr: { xs: 0, sm: 0.1, md: 1, lg: 5, xl: 0 },
+      }}
+    >
       <Grid2 variant="contained" xs={3}>
         <StyledButton>Home</StyledButton>
       </Grid2>
