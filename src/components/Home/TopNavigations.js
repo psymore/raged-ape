@@ -1,17 +1,8 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
-import { Button } from "@mui/material";
-import { deepPurple, green, purple, red } from "@mui/material/colors";
+import StyledButton from "../Common/StyledButton";
+import { Typography } from "@mui/material";
 export default function TopNavigation() {
-  const ColorButton = styled(Button)(({ theme }) => ({
-    color: theme.palette.getContrastText(red[200]),
-    backgroundColor: green[50],
-    "&:hover": {
-      backgroundColor: red[200],
-    },
-  }));
-
   const handleSignUpClick = () => {
     // handle sign up button click here
     console.log("Sign up button clicked");
@@ -23,18 +14,24 @@ export default function TopNavigation() {
   };
 
   return (
-    <Grid2 container spacing={10} sx={{ border: "1px solid red" }}>
-      <Grid2 variant="contained" sx={{ border: "1px solid red" }} xs={3}>
-        <ColorButton sx={{ width: "10rem" }}> Home</ColorButton>
+    <Grid2
+      container
+      spacing={{ xs: 0, sm: 0.1, md: 1, lg: 5, xl: 10 }}
+      sx={{
+        mr: { xs: 0, sm: 0.1, md: 1, lg: 5, xl: 0 },
+      }}
+    >
+      <Grid2 variant="contained" xs={3}>
+        <StyledButton>Home</StyledButton>
       </Grid2>
       <Grid2 variant="contained" xs={3}>
-        <ColorButton sx={{ width: "10rem" }}> Music</ColorButton>
+        <StyledButton> Music</StyledButton>
       </Grid2>
       <Grid2 variant="contained" xs={3}>
-        <ColorButton sx={{ width: "10rem" }}> Project Files</ColorButton>
+        <StyledButton> Project Files</StyledButton>
       </Grid2>
       <Grid2 variant="contained" xs={3}>
-        <ColorButton sx={{ width: "10rem" }}> Contact</ColorButton>
+        <StyledButton> Contact</StyledButton>
       </Grid2>
     </Grid2>
   );

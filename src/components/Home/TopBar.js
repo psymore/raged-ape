@@ -1,5 +1,13 @@
 import * as React from "react";
-import { AppBar, Grid, Toolbar, Button, Menu, MenuItem } from "@mui/material";
+import {
+  AppBar,
+  Grid,
+  Toolbar,
+  Button,
+  Menu,
+  MenuItem,
+  Typography,
+} from "@mui/material";
 import Person4Icon from "@mui/icons-material/Person4";
 import TopNavigation from "./TopNavigations";
 
@@ -31,28 +39,35 @@ export default function TopBar() {
     <React.Fragment>
       <AppBar position="static">
         <Toolbar
+          backgroundColor="primary"
           sx={{
             height: "7rem",
-            backgroundColor: "#333333",
           }}
         >
-          <Grid container justifyContent="space-between" alignItems="center">
+          <Grid
+            container
+            justifyContent="space-between"
+            alignItems="center"
+            sx={{ marginInline: "6rem" }}
+          >
             <Grid item sx={{ cursor: "pointer" }}>
-              Raged Ape
+              <Typography sx={{ color: "red" }}>RAGED APE</Typography>
             </Grid>
             <Grid item>
               <TopNavigation />
             </Grid>
             <Grid item>
               <Button
-                color="primary"
+                color="secondary"
                 variant="outlined"
                 onClick={handleMenuOpen}
               >
                 <Person4Icon />
               </Button>
               <Menu anchorEl={anchorEl} open={open} onClose={handleMenuClose}>
-                <MenuItem onClick={handleSignUpClick}>Sign up</MenuItem>
+                <MenuItem color="primary" onClick={handleSignUpClick}>
+                  Sign up
+                </MenuItem>
                 <MenuItem onClick={handleDeleteAccountClick}>
                   Delete account
                 </MenuItem>

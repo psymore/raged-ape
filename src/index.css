@@ -1,8 +1,21 @@
 body {
   margin: 0;
-  font-family: cursive;
+  font-family: Segoe UI Symbol;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+html,
+body {
+  height: 100vh;
+}
+
+.App {
+  background-image: url(./images/dark_gray_abstract_structure.jpg);
+  background-size: cover;
+  background-repeat: "repeat-y";
+  width: auto;
+  height: 100vh;
 }
 
 code {
@@ -13,4 +26,8 @@ code {
 Button {
   text-transform: unset !important;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+html {
+  overflow-x: hidden;
 }
