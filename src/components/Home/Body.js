@@ -1,8 +1,8 @@
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Icon, IconButton, Typography } from "@mui/material";
 import RouteLayout from "../Common/RouteLayout";
 import { egeSoundcloud } from "../../images";
 import { GitIcon, LinkedInIcon, TwitterIcon } from "../../images";
-
+import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
 export default function Body() {
   return (
     <RouteLayout>
@@ -76,9 +76,11 @@ export default function Body() {
             bottom: 0,
           }}
         >
-          <GitIcon />
-          <TwitterIcon />
-          <LinkedInIcon />
+          <IconButton sx={{ gap: "4rem" }}>
+            <GitIcon />
+            <TwitterIcon />
+            <LinkedInIcon />
+          </IconButton>
         </Grid>
       </Grid>
     </RouteLayout>
